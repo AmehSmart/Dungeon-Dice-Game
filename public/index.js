@@ -45,7 +45,7 @@ async function readJson(response, fallbackMessage) {
   }
 
   if (!response.ok) {
-    throw new Error(data.message || `${fallbackMessage} (HTTP ${response.status})`);
+    throw new Error(data.message || data.message ||`${fallbackMessage} (HTTP ${response.status})`);
   }
 
   return data;
@@ -303,6 +303,14 @@ heroesGrid.addEventListener('click', (e) => {
 });
 
 async function handleRollRound() {
+
+  const battleEnded = (playerHero && computerHero) &&
+    (Number(playerHp) <= 0 || Number(computerHp) <= 0);
+
+  if (battleEnded) {
+    statusMessage.textContent = 'Battle is already over.';
+    return;
+  }
   primaryActionBtn.classList.remove('is-rolling');
   // Force reflow so rapid clicks can retrigger the same animation class.
   void primaryActionBtn.offsetWidth;
