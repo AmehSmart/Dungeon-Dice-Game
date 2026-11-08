@@ -939,3 +939,133 @@ button:disabled {
   color: var(--accent);
   font-size: 1.7rem;
 }
+
+
+/* Large tablets and small laptops */
+@media (max-width: 900px) {
+  .layout {
+    padding-inline: 1rem;
+  }
+
+  .cards-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+}
+
+/* Phones and tablets: stack battle slots */
+@media (max-width: 720px) {
+  .site-header {
+    position: static;
+    align-items: stretch;
+    padding: 0.75rem 1rem;
+  }
+
+  .site-header__brand {
+    flex-basis: 100%;
+  }
+
+  .site-header__title-row,
+  .header-actions {
+    width: 100%;
+  }
+
+  .header-actions {
+    justify-content: stretch;
+  }
+
+  #reset-btn,
+  .rules-wrap,
+  .rules-summary {
+    flex: 1;
+  }
+
+  .rules-summary {
+    width: 100%;
+  }
+
+  .layout {
+    padding: 0.75rem;
+  }
+
+  .battle-arena {
+    grid-template-columns: 1fr;
+  }
+
+  .battle-vs {
+    min-height: 1rem;
+    margin-block: -0.25rem;
+  }
+
+  .battle-slot {
+    width: 100%;
+  }
+
+  .cards-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.65rem;
+  }
+
+  .monster-image {
+    height: clamp(110px, 32vw, 150px);
+  }
+
+  .rules-panel {
+    position: fixed;
+    left: 1rem;
+    right: 1rem;
+    top: 5rem;
+    width: auto;
+    max-height: calc(100vh - 6rem);
+  }
+
+  .header-dropdown-links {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .header-dropdown-btn {
+    min-width: 0;
+    flex: 1 1 calc(50% - 0.5rem);
+  }
+}
+
+/* Small phones */
+@media (max-width: 420px) {
+  .site-header h1 {
+    font-size: 1.15rem;
+  }
+
+  .layout {
+    padding-inline: 0.5rem;
+  }
+
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .status-panel {
+    padding-inline: 0.65rem;
+  }
+
+  .monster-image {
+    height: 180px;
+  }
+
+  button,
+  .rules-summary,
+  .header-link-btn {
+    min-height: 44px;
+  }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
