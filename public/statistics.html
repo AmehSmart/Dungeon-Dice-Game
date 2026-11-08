@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game Stats | Dungeon Dice Duel</title>
+    <link rel="stylesheet" href="/index.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header__brand">
+        <h1>Dungeon Dice Duel</h1>
+        <p class="header-goal">Your battle record.</p>
+      </div>
+      <div class="header-actions">
+        <a class="header-link-btn" href="/">Home</a>
+      </div>
+    </header>
+
+    <main class="auth-main">
+      <section class="auth-card statistics-card" aria-labelledby="statistics-title">
+        <h2 id="statistics-title">Game Stats</h2>
+        <div class="statistics-grid" aria-live="polite">
+          <div class="stat-item">
+            <span>Total battles</span>
+            <strong id="total-battles">-</strong>
+          </div>
+          <div class="stat-item">
+            <span>Wins</span>
+            <strong id="wins">-</strong>
+          </div>
+          <div class="stat-item">
+            <span>Losses</span>
+            <strong id="losses">-</strong>
+          </div>
+          <div class="stat-item">
+            <span>Draws</span>
+            <strong id="draws">-</strong>
+          </div>
+          <div class="stat-item">
+            <span>Best run</span>
+            <strong id="best-run">-</strong>
+          </div>
+        </div>
+        <p id="statistics-error" class="auth-helper"></p>
+      </section>
+    </main>
+
+    <script src="/statistics.js" type="module"></script>
+  </body>
+</html>
